@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collector Apps: MOTU Collector and M.U.S.C.L.E. Collector</title>
+<meta name="description" content="Two free, ad-free collection trackers: MOTU Collector for Masters of the Universe figures and M.U.S.C.L.E. Collector for the 236 M.U.S.C.L.E. figures.">
+<meta name="theme-color" content="#14101f">
+<style>
+  :root {
+    --motu-bg: #14101f;
+    --motu-panel: #1d1730;
+    --motu-gold: #e8b64a;
+    --motu-steel: #9fb4c9;
+    --muscle-plum: #633159;
+    --muscle-blue: #06B0FE;
+    --muscle-yellow: #FFD700;
+    --muscle-orange: #FF6600;
+    --muscle-red: #E60000;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    background: #000;
+    color: #fff;
+  }
+  .split {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 900px) {
+    .split { grid-template-columns: 1fr 1fr; }
+  }
+  .panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.5rem, 5vw, 4.5rem);
+  }
+  .panel-inner { max-width: 30rem; margin: 0 auto; width: 100%; }
+  .panel h1 { font-size: clamp(2.4rem, 6.2vw, 4rem); line-height: 1; }
+  .panel .tagline { margin-top: 1rem; font-size: 1.1rem; }
+  .panel ul { margin: 1.5rem 0 2rem; padding: 0; list-style: none; }
+  .panel li { padding: 0.55rem 0; border-top: 1px solid var(--rule); }
+  .panel li:last-child { border-bottom: 1px solid var(--rule); }
+  .btn {
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  .btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  .url { display: block; margin-top: 0.9rem; font-size: 0.9rem; opacity: 0.8; }
+
+  /* MOTU: dark castle, gold and steel */
+  .motu {
+    --rule: rgba(159, 180, 201, 0.25);
+    background:
+      radial-gradient(120% 60% at 50% 0%, #2c2150 0%, transparent 70%),
+      var(--motu-bg);
+    color: #ece8f5;
+  }
+  .motu h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    color: var(--motu-gold);
+  }
+  .motu .tagline { color: var(--motu-steel); }
+  .motu .btn { background: var(--motu-gold); color: #1a1405; }
+  .motu .btn:hover { background: #f5c964; }
+
+  /* M.U.S.C.L.E.: 1980s packaging palette */
+  .muscle {
+    --rule: rgba(255, 255, 255, 0.28);
+    background: var(--muscle-plum);
+    color: #fff;
+    border-top: 6px solid var(--muscle-red);
+  }
+  @media (min-width: 900px) {
+    .muscle { border-top: 0; border-left: 6px solid var(--muscle-red); }
+  }
+  .muscle h1 {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Black", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--muscle-yellow);
+    -webkit-text-stroke: 1px #fff;
+    text-shadow: 4px 4px 0 var(--muscle-orange);
+  }
+  .muscle .tagline { color: #f3dff0; }
+  .muscle .btn { background: var(--muscle-blue); color: #00202f; }
+  .muscle .btn:hover { background: #4cc9ff; }
+
+  footer {
+    background: #0b0912;
+    color: #b9b4c7;
+    text-align: center;
+    padding: 1.4rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  footer p { max-width: 42rem; margin: 0 auto; }
+</style>
+</head>
+<body>
+  <main class="split">
+    <section class="panel motu" aria-labelledby="motu-title">
+      <div class="panel-inner">
+        <h1 id="motu-title">MOTU Collector</h1>
+        <p class="tagline">Track your Masters of the Universe action figures, line by line.</p>
+        <ul>
+          <li>Full catalog organized by line and subline</li>
+          <li>Owned and want lists, with a shareable want-list page</li>
+          <li>Your own photos, backup and restore, community line packs</li>
+          <li>Installs on your phone and works offline</li>
+        </ul>
+        <a class="btn" href="https://motucollector.app" rel="noopener">Open MOTU Collector</a>
+        <span class="url">motucollector.app</span>
+      </div>
+    </section>
+
+    <section class="panel muscle" aria-labelledby="muscle-title">
+      <div class="panel-inner">
+        <h1 id="muscle-title">M.U.S.C.L.E. Collector</h1>
+        <p class="tagline">Fill in the poster: all 236 M.U.S.C.L.E. figures, in every color.</p>
+        <ul>
+          <li>Poster, list, and stats views</li>
+          <li>Track owned and wanted separately for each of the nine colors</li>
+          <li>Filter by color and class, or search by number ranges</li>
+          <li>Print or save your want list as a PDF to send to a friend</li>
+        </ul>
+        <a class="btn" href="https://musclemen.app" rel="noopener">Open M.U.S.C.L.E. Collector</a>
+        <span class="url">musclemen.app</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Both apps are free, have no ads and no accounts, and keep your collection on your own device. They are non-commercial fan projects and are not affiliated with or endorsed by any toy company.</p>
+  </footer>
+</body>
+</html>
